@@ -1,0 +1,8 @@
+body {
+    font-family: 'Quicksand';
+}
+
+:root {
+    --primary-color: #45382f;
+    --secondary-color: #e59e10;
+}

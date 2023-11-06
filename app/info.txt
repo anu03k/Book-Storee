@@ -1,0 +1,21 @@
+The includes method is a built-in method in JavaScript that is used to check whether a string contains 
+another substring or whether an array includes a specific value. It returns true if the specified value is
+ found, and false otherwise.
+
+ /* A callback function is a function that is passed to another function as an argument 
+and is called back by the other function when it is finished executing. Callback functions are commonly 
+used in asynchronous programming, where one function needs to wait for
+ another function to finish executing before continuing. */
+
+
+// The map function in JavaScript is a higher-order function that takes an array as input and returns a new array with the results of calling a function on each element of the original array.
+/*Optional chaining is a JavaScript operator that allows you 
+to access nested object properties without having to c
+heck if each intermediate property exists. This can be useful for avoiding errors and making
+ your code more concise. 
+ 
+
+ JSX elements directly inside a map() call always need keys!
+ 
+ 
+ */
