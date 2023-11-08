@@ -18,11 +18,12 @@ const App = () => {
   const [loading, setLoading] = useState(true);
   let error=null;
   const[FilteredData, setFiltered]=useState(null);
-  
+  const [selectedBtn, setSelectedBtn] = useState("all");
 
 
   
 
+   
    useEffect(()=>{
     const FetchBookData = async ()=>{
       try{ 
@@ -57,34 +58,41 @@ const App = () => {
 
 
 
-  // const SearchBook =(e)=>{
-  //   const SearchValue=e.target.value;
-  //   console.log(SearchValue);
 
-  //   if((SearchValue) === " "){
-  //     setFiltered(null);
-  //   }
+  // let filter=null;
+//   const SearchBook = (e) => {
+//     const searchValue = e.target.value;
 
-  //   const fitler = data?.filter((book)=>
-  //   book.name.toLowerCase().includes(SearchValue.toLowerCase())
-  //   );
-  //   setFiltered(fitler);
-  // }
-
-  let filter=null;
-  const SearchBook = (e) => {
-    const searchValue = e.target.value;
-
-    console.log(searchValue);
-
+//     console.log(searchValue);
+//        if(searchValue=== ''){
+//       setFiltered(null);
+//                               }
     
-     filter = data?.filter((food) =>
-    food.type.toLowerCase().includes(type.toLowerCase())
-  );
-  setFiltered(filter);
+//     const filter = data?.filter((book) =>
+//     book.name.toLowerCase().includes(searchValue.toLowerCase())
+//   );
+//   setFiltered(filter);
   
-};
-    
+// };
+// const SearchBook = (e) => {
+//   const searchValue = e.target.value.toLowerCase();
+
+//   if (!data) {
+//     return;
+//   }
+
+//   if (searchValue === '') {
+//     setFiltered(data);
+//     return;
+//   }
+
+//   const filter = data.filter((book) =>
+//     book.name.includes(searchValue)
+//   );
+//   setFiltered(filter);
+// };
+
+ 
     
 
 
@@ -100,10 +108,10 @@ const App = () => {
       </div>
 
       <div className="search">
-        <input type="text" onChange={SearchBook}   placeholder='Search Book' />
+        <input type="text" onChange={(e)=>SearchBook(e)}   placeholder='Search Book' />
       </div>
     </TopContainer>
-    <Filter />
+    <Filter data={data} />
     
       
   </MainContainer>

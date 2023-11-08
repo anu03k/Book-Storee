@@ -1,7 +1,22 @@
 import React from 'react'
 import styled from 'styled-components';
 
-const  Filter=()=> {
+const  Filter=({data})=> {
+  const filteredBook=(type)=>{
+    if(type==='all'){
+      setFiltered(data);
+      setSelectedBtn('all');
+      return;
+    }
+    const filter = data?.filter((food) =>
+        food.type.toLowerCase().includes(type.toLowerCase())
+      );
+      FilteredData(filter);
+      setSelectedBtn(type);
+    
+    
+  }
+      
     // console.log('Filter component is rendering');
   return (
     
@@ -9,13 +24,13 @@ const  Filter=()=> {
   
         <FilterContainer>
             
-       <Button>All</Button>
+       <Button onClick={()=>filteredBook('all')}   >All</Button>
 
-       <Button>Children</Button>
-       <Button>Horror</Button>
-       <Button>Romance</Button>
-       <Button>Self-Help</Button>
-       <Button>Thriller</Button>
+       <Button onClick={()=>filteredBook('Children')}>Children</Button>
+       <Button onClick={()=>filteredBook('Horror')}>Horror</Button>
+       <Button onClick={()=>filteredBook('Romance')}>Romance</Button>
+       <Button onClick={()=>filteredBook('Self-Help')}>Self-Help</Button>
+       <Button onClick={()=>filteredBook('Thriller')}>Thriller</Button>
 
 
             </FilterContainer>
